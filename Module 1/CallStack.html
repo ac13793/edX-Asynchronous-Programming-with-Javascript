@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var count = 0;
+        function doMath(x, y) {
+            count++;
+            return square(x) - square(y);
+        }
+
+
+        function square(num) {
+            count++;
+            return multiply(num, num);
+        }
+
+        function multiply(x, y) {
+            count++;
+            return x * y;
+        }
+
+        doMath();
+        doMath();
+        console.log(count);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
