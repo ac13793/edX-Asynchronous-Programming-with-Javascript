@@ -4,30 +4,40 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <script>
-        var count = 0;
-        function doMath(x, y) {
-            count++;
-            return square(x) - square(y);
-        }
-
-
-        function square(num) {
-            count++;
-            return multiply(num, num);
-        }
-
-        function multiply(x, y) {
-            count++;
-            return x * y;
-        }
-
-        doMath();
-        doMath();
-        console.log(count);
-    </script>
+    
 </head>
 <body>
+    <button id="b1"> b1 </button>
+    <button id="b2"> b2 </button>
+    <script>
+        document.getElementById("b1").addEventListener('click', function () {
+            setTimeout(function () {
+                console.log("click1");
+            }, 0);
+        })
 
+        document.getElementById("b2").addEventListener('click', function () {
+            console.log("click2");
+        })
+
+
+        setInterval(function () {
+            console.log("interval");
+        }, 2000);
+
+
+        setTimeout(function () {
+            document.getElementById("b1").click(); //clicks the button with the id of 'b1'
+        }, 1500);
+
+
+        setTimeout(function () {
+            document.getElementById("b2").click(); //clicks the button with the id of 'b2'
+        }, 1500);
+
+        setTimeout(function () {
+            console.log("timeout");
+        }, 1000);
+    </script>
 </body>
 </html>
